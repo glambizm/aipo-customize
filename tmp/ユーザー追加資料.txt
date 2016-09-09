@@ -1,0 +1,229 @@
+【action】
+https://app.aipo.com/portal/js_peid/121?template=SaaSAccountUserFormJSONScreen
+
+【onsubmit】
+aimluck.io.createSelectFromFileList(this, '121');
+aimluck.io.selectAllOptions(this.group_to);
+aimluck.io.submit(this,'indicator-dlg-','121', aipo.account_user.onReceiveMessage);
+return false;
+
+【html】
+<div id="modalDialog" class="modalDialog dijitContentPane" dojoattachpoint="wrapper" widgetid="modalDialog" title="" style="display: block; opacity: 1; top: 0px;">
+    <span dojoattachpoint="tabStartOuter" dojoonfocus="trapTabs" dojoonblur="clearTrap" tabindex="0"></span>
+    <span dojoattachpoint="tabStart" dojoonfocus="trapTabs" dojoonblur="clearTrap" tabindex="0"></span>
+    <div dojoattachpoint="containerNode" style="position: relative; z-index: 2;">
+        <script type="text/javascript" src="/javascript/aipo/account_user/form.js?1473282942000"></script>
+        <div class="auiPopup clearfix">
+            <div class="auiPopupHead clearfix">
+                <div class="auiPopupTool">
+                    <div>
+                        <a href="javascript:void(0)" class="auiButtonIcon" title="閉じる" onclick="aipo.common.hideDialog();">
+                            <span>
+                                <i class="icon-remove"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="auiPopupTitle">ユーザー追加</div>
+            </div>
+            <div class="roundBlockContent">
+                <div id="messageDiv"></div>
+                <div class="auiSummaryMeta clearfix">
+                    <div class="floatRight">
+                        <div class="auiSelectButton">
+                            <ul id="startguideSelectButton">
+                                <li id="account_group-button121">
+                                    <a class="first" style="width:10em;" href="javascript:void(0);" onclick="aipo.common.showDialog('https://app.aipo.com/portal/js_peid/121?template=StartGuideFormScreen&amp;entityid=new&amp;mediatype=system&amp;current_tab=account_group');">
+                                        <span>メールで一括招待</span>
+                                    </a>
+                                </li>
+                                <li id="account_user-button121" class="active">
+                                    <a class="last" style="width:10em;" href="javascript:void(0);">
+                                        <span>1ユーザーずつ追加</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="indicator" id="indicator-dlg-121" style="display:none;">データを送信しています...</div>
+                <form name="form121" id="form121" action="https://app.aipo.com/portal/js_peid/121?template=SaaSAccountUserFormJSONScreen" method="post" onsubmit=" aimluck.io.createSelectFromFileList(this, '121');  aimluck.io.selectAllOptions(this.group_to);aimluck.io.submit(this,'indicator-dlg-','121', aipo.account_user.onReceiveMessage);return false;">
+                    <input type="hidden" name="_name" value="accountuserForm">
+                    <input type="hidden" name="secid" value="6aadf31642e7a26c00c70116d35afb0d">
+                    <input name="is_new_post" type="hidden" value="false">
+                    <input name="is_new_position" type="hidden" value="false">
+                    <input type="hidden" name="mediaType" value="system">
+                    <input type="hidden" name="mode" value="insert">
+                    <table class="listTable wide">
+                        <tbody>
+                            <tr>
+                                <td class="caption"><span class="required">メールアドレス</span>
+                                </td>
+                                <td>
+                                    <input class="text" type="text" name="email" id="email" value="" maxlength="50" style="width:70%;ime-mode:disabled">
+                                    <span class="caution">（半角英数字）</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption"><span class="required">パスワード</span>
+                                </td>
+                                <td>
+                                    <input class="text" type="password" name="password" id="password" value="" maxlength="" style="width:50%;ime-mode:disabled">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption"><span class="required">パスワード<br>（確認用）</span>
+                                </td>
+                                <td>
+                                    <input class="text" type="password" name="password2" id="password2" value="" maxlength="" style="width:50%;ime-mode:disabled">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption"><span class="required">名前</span>
+                                </td>
+                                <td>
+                                    <input class="text" type="text" name="lastname" id="lastname" value="" maxlength="20" style="width:30%;ime-mode:active">
+                                    <input class="text" type="text" name="firstname" id="firstname" value="" maxlength="20" style="width:30%;ime-mode:active">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption"><span class="required">名前（フリガナ）</span>
+                                </td>
+                                <td>
+                                    <input class="text" type="text" name="last_name_kana" id="last_name_kana" value="" maxlength="20" style="width:30%;ime-mode:active">
+                                    <input class="text" type="text" name="first_name_kana" id="first_name_kana" value="" maxlength="20" style="width:30%;ime-mode:active">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption">電話番号（外線）</td>
+                                <td>
+                                    <input class="text" type="text" name="out_telephone1" id="out_telephone1" value="" maxlength="5" style="width:20%;ime-mode:disabled"> -&nbsp;
+                                    <input class="text" type="text" name="out_telephone2" id="out_telephone2" value="" maxlength="4" style="width:20%;ime-mode:disabled"> -&nbsp;
+                                    <input class="text" type="text" name="out_telephone3" id="out_telephone3" value="" maxlength="4" style="width:20%;ime-mode:disabled">
+                                    <span class="caution">（半角数字）</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption">電話番号（内線）</td>
+                                <td>
+                                    <input class="text" type="text" name="in_telephone" id="in_telephone" value="" maxlength="13" style="width:30%;ime-mode:disabled">
+                                    <span class="caution">（ハイフン（-）または半角数字）</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption">電話番号（携帯）</td>
+                                <td>
+                                    <input class="text" type="text" name="cellular_phone1" id="cellular_phone1" value="" maxlength="5" style="width:20%;ime-mode:disabled"> -&nbsp;
+                                    <input class="text" type="text" name="cellular_phone2" id="cellular_phone2" value="" maxlength="4" style="width:20%;ime-mode:disabled"> -&nbsp;
+                                    <input class="text" type="text" name="cellular_phone3" id="cellular_phone3" value="" maxlength="4" style="width:20%;ime-mode:disabled">
+                                    <span class="caution">（半角数字）</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption">携帯メールアドレス</td>
+                                <td>
+                                    <input class="text" type="text" name="cellular_mail" id="cellular_mail" value="" maxlength="50" style="width:70%;ime-mode:disabled">
+                                    <span class="caution">（半角英数字）</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption">顔写真</td>
+                                <td>
+                                    <iframe name="if_fileupload_121" id="if_fileupload_121" allowtransparency="true" class="auiInputFileFrame" src="https://app.aipo.com/portal/js_peid/121?template=FileuploadFormScreen&amp;mode=miniform" frameborder="0" scrolling="no">
+                                    </iframe>
+                                    <ul id="attachments_121" class="attachments">
+                                    </ul>
+                                    <input type="hidden" id="folderName_121" name="folderName" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption">部署</td>
+                                <td>
+                                    <div class="spaceTop spaceLeft small">左側に所属部署を追加してください。</div>
+                                    <div id="groupnormalselect" widgetid="groupnormalselect">
+                                        <table class="none">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div id="groupPopupDiv">
+                                                            <div class="outer">
+                                                                <div class="popup" style="width:335px">
+                                                                    <div class="clearfix">
+                                                                        <div class="memberlistToTop">所属部署</div>
+                                                                        <div class="memberlistFromTop">部署一覧</div>
+                                                                    </div>
+                                                                    <div class="clearfix mb5">
+                                                                        <div class="memberlistToBody">
+                                                                            <select size="5" multiple="multiple" style="width:100%" name="group_to" id="group_to"></select>
+                                                                        </div>
+                                                                        <div class="memberlistFromBody">
+                                                                            <select size="5" multiple="multiple" style="width:100%" name="tmp_group_from" id="tmp_group_from"></select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="clearfix">
+                                                                        <div class="memberlistToBottom">
+                                                                            <div class="alignright">
+                                                                                <input id="button_group_remove" name="button_group_remove" type="button" class="button" value="削除" dojoattachevent="onclick:onMemberRemoveClick">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="memberlistFromBottom">
+                                                                            <div class="alignright">
+                                                                                <input id="button_group_add" name="button_group_add" type="button" class="button" value="＜ 追加" dojoattachevent="onclick:onMemberAddClick">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <select size="5" multiple="multiple" style="display:none;" name="init_grouplist" id="init_grouplist"></select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption">役職</td>
+                                <td>
+                                    <div id="positionInputField" style="display:none">
+                                        <input class="text" type="text" name="position_name" id="position_name" value="" maxlength="50" style="width:90%;ime-mode:active">
+                                    </div>
+                                    <div id="positionSelectField">
+                                        <select name="position_id" class="w100 mb5">
+                                            <option value="">（指定しない）</option>
+                                        </select>
+                                    </div>
+                                    <input name="position_input_button" type="button" class="button" value=" 新しく入力する " onclick="aipo.account_user.formSwitchPositionInput(this)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption">社員コード</td>
+                                <td>
+                                    <input class="text" type="text" name="code" id="code" value="" maxlength="100" style="width:70%;ime-mode:disabled">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption">管理者権限</td>
+                                <td>
+                                    <input name="is_admin_checkbox" type="checkbox" value="" id="121is_admin_id" onchange="aipo.account_user.formAdminToggle(this);">&nbsp;
+                                    <label for="121is_admin_id">管理者にする</label>
+                                    <input name="is_admin" type="hidden" id="is_admin" value="">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="center auiPopupButtons">
+                        <p style="padding:5px;">
+                            <input name="is_mail" type="checkbox" value="true" id="121is_mail" checked="checked">&nbsp;
+                            <label for="121is_mail">アカウント情報をユーザーに送信する</label>
+                        </p>
+                        <input name="eventSubmit_doAccount_insert" class="auiButtonAction" type="submit" value="追加する" onclick="aimluck.io.setHiddenValue(this);">
+                        <input name="ajaxbuttonClose" class="button" type="button" value="閉じる" onclick="aipo.common.hideDialog();">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <span dojoattachpoint="tabEnd" dojoonfocus="trapTabs" dojoonblur="clearTrap" tabindex="0"></span><span dojoattachpoint="tabEndOuter" dojoonfocus="trapTabs" dojoonblur="clearTrap" tabindex="0"></span>
+</div>

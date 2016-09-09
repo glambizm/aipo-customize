@@ -1,0 +1,141 @@
+【action】
+"https://app.aipo.com/portal/js_peid/128?template=AccessControlFormJSONScreen
+
+【onsubmit】
+aimluck.io.selectAllOptions(this.member_to);
+aimluck.io.submit(this,'indicator-dlg-', '128',aipo.accessctl.onReceiveMessage);
+return false;
+
+【html】
+<div id="modalDialog" class="modalDialog dijitContentPane mb_dialog" dojoattachpoint="wrapper" widgetid="modalDialog" title="" style="display: block; opacity: 1; top: 7px;"><span dojoattachpoint="tabStartOuter" dojoonfocus="trapTabs" dojoonblur="clearTrap" tabindex="0"></span><span dojoattachpoint="tabStart" dojoonfocus="trapTabs" dojoonblur="clearTrap" tabindex="0"></span>
+    <div dojoattachpoint="containerNode" style="position: relative; z-index: 2;">
+        <div class="auiPopup clearfix">
+            <div class="auiPopupHead clearfix">
+                <div class="auiPopupTool">
+                    <div><a href="javascript:void(0)" class="auiButtonIcon" title="閉じる" onclick="aipo.common.hideDialog();"><span><i class="icon-remove"></i></span></a>
+                    </div>
+                </div>
+                <div class="auiPopupTitle">アクセス権限編集</div>
+            </div>
+            <div class="roundBlockContent">
+                <div class="indicator" id="indicator-dlg-128" style="display:none;">データを送信しています...</div>
+                <div id="messageDiv"></div>
+                <form name="form128" id="form128" action="https://app.aipo.com/portal/js_peid/128?template=AccessControlFormJSONScreen" method="post" onsubmit="aimluck.io.selectAllOptions(this.member_to);aimluck.io.submit(this,'indicator-dlg-', '128',aipo.accessctl.onReceiveMessage);return false;">
+                    <input type="hidden" name="_name" value="accessControlForm">
+                    <input type="hidden" name="secid" value="6aadf31642e7a26c00c70116d35afb0d">
+                    <input type="hidden" name="mode" value="update">
+                    <table class="listTable wide">
+                        <tbody>
+                            <tr>
+                                <td class="caption"><span class="required">ロール名</span>
+                                </td>
+                                <td>
+                                    <input class="text w100" type="text" name="acl_role_name" id="acl_role_name" value="掲示板（トピック）操作" maxlength="50" style="ime-mode:active">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption"><span class="required">アクセス権限</span>
+                                </td>
+                                <td>
+                                    <select name="feature_id" id="feature_id" class="w100 mb5" onchange="aipo.accessctl.changeAcls('128', 'https://app.aipo.com/portal/js_peid/128/template/PortletFeatureLiteJSONScreen', this.options[this.selectedIndex].value)">
+                                        <option value="131" selected="selected">掲示板（トピック）操作</option>
+                                    </select>
+                                    <div id="aclsDiv">
+                                        <input name="acllist" id="acllist" type="checkbox" value="1">
+                                        <label for="acllist">&nbsp;一覧表示</label>&nbsp;
+                                        <input name="acldetail" id="acldetail" type="checkbox" value="1">
+                                        <label for="acldetail">&nbsp;詳細表示</label>&nbsp;
+                                        <input name="aclinsert" id="aclinsert" type="checkbox" value="1">
+                                        <label for="aclinsert">&nbsp;追加</label>&nbsp;
+                                        <input name="aclupdate" id="aclupdate" type="checkbox" value="1">
+                                        <label for="aclupdate">&nbsp;編集</label>&nbsp;
+                                        <input name="acldelete" id="acldelete" type="checkbox" value="1">
+                                        <label for="acldelete">&nbsp;削除</label>&nbsp;</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption"><span class="required">所属メンバー</span>
+                                </td>
+                                <td>
+                                    <div class="spaceTop spaceLeft small">左側にユーザーを追加してください。</div>
+                                    <div id="membernormalselect" widgetid="membernormalselect">
+                                        <table class="none" style="table-layout: fixed;">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div id="memberPopupDiv">
+                                                            <div class="outer">
+                                                                <div class="popup">
+                                                                    <div class="clearfix">
+                                                                        <div class="memberlistToTop">所属メンバー一覧</div>
+                                                                        <div class="memberlistFromTop">
+                                                                            <select size="1" style="width:100%" name="tmp_group" id="tmp_group" dojoattachevent="onchange:changeGroup">
+                                                                                <option value="LoginUser">すべてのグループ</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="clearfix mb5">
+                                                                        <div class="memberlistToBody">
+                                                                            <select size="5" multiple="multiple" style="width:100%" name="member_to" id="member_to">
+                                                                                <option value="0000180388">管理 太郎</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="memberlistFromBody">
+                                                                            <select size="5" multiple="multiple" style="width:100%" name="tmp_member_from" id="tmp_member_from">
+                                                                                <option value="0000180388">管理 太郎</option>
+                                                                                <option value="0000180523">利用 太郎</option>
+                                                                                <option value="0000180527">利用 次郎</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="clearfix">
+                                                                        <div class="memberlistToBottom">
+                                                                            <div class="alignright">
+                                                                                <input id="button_member_remove" name="button_member_remove" type="button" class="button" value="削除" dojoattachevent="onclick:onMemberRemoveClick">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="memberlistFromBottom">
+                                                                            <div style="display: none;" id="membernormalselect-memberlist-indicator" class="indicator alignleft">読み込み中</div>
+                                                                            <div class="alignright">
+                                                                                <input id="button_member_add" name="button_member_add" type="button" class="button" value="＜ 追加" dojoattachevent="onclick:onMemberAddClick">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <select size="5" multiple="multiple" style="display:none;" name="init_memberlist" id="init_memberlist">
+                                        <option value="0000180388">管理 太郎</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption">メモ</td>
+                                <td>
+                                    <textarea class="text wide" name="note" rows="10" cols="40"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="center auiPopupButtons">
+                        <input name="eventSubmit_doAccessctl_update" class="auiButtonAction" type="submit" value="更新する" onclick="aimluck.io.setHiddenValue(this);">
+                        <input name="ajaxbuttonClose" class="button" type="button" value="閉じる" onclick="aipo.common.hideDialog();">
+                    </div>
+                    <input type="hidden" id="urlacls128" name="urlacls128" value="https://app.aipo.com/portal/js_peid/128/template/PortletFeatureLiteJSONScreen">
+                    <input type="hidden" id="initfeature128" name="initfeature128" value="131">
+                    <input type="hidden" id="initacllist128" name="initacllist128" value="checked">
+                    <input type="hidden" id="initacldetail128" name="initacldetail128" value="checked">
+                    <input type="hidden" id="initaclinsert128" name="initaclinsert128" value="checked">
+                    <input type="hidden" id="initaclupdate128" name="initaclupdate128" value="checked">
+                    <input type="hidden" id="initacldelete128" name="initacldelete128" value="checked">
+                </form>
+            </div>
+        </div>
+    </div>
+    <span dojoattachpoint="tabEnd" dojoonfocus="trapTabs" dojoonblur="clearTrap" tabindex="0"></span><span dojoattachpoint="tabEndOuter" dojoonfocus="trapTabs" dojoonblur="clearTrap" tabindex="0"></span>
+</div>

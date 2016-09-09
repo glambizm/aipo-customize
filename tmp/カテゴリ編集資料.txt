@@ -1,0 +1,135 @@
+【action】
+https://app.aipo.com/portal/js_peid/P-15708bf7a28-10ba9?template=MsgboardCategoryFormJSONScreen
+
+【onsubmit】
+aimluck.io.selectAllOptions(this.member_to);
+aimluck.io.submit(this,'indicator-dlg-','P-15708bf7a28-10ba9',aipo.msgboard.onReceiveMessage);
+return false;
+
+【html】
+<div id="modalDialog" class="modalDialog dijitContentPane mb_dialog" dojoattachpoint="wrapper" widgetid="modalDialog" title="" style="display: block; opacity: 1; top: 35px;"><span dojoattachpoint="tabStartOuter" dojoonfocus="trapTabs" dojoonblur="clearTrap" tabindex="0"></span><span dojoattachpoint="tabStart" dojoonfocus="trapTabs" dojoonblur="clearTrap" tabindex="0"></span>
+    <div dojoattachpoint="containerNode" style="position: relative; z-index: 2;">
+        <div class="auiPopup clearfix">
+            <div class="auiPopupHead clearfix">
+                <div class="auiPopupTool">
+                    <div><a href="javascript:void(0)" class="auiButtonIcon" title="閉じる" onclick="aipo.common.hideDialog();"><span><i class="icon-remove"></i></span></a>
+                    </div>
+                </div>
+                <div class="auiPopupTitle">カテゴリ編集</div>
+            </div>
+            <div class="roundBlockContent">
+                <div class="indicator" id="indicator-dlg-P-15708bf7a28-10ba9" style="display:none;">データを送信しています...</div>
+                <div id="messageDiv"></div>
+                <form name="formP-15708bf7a28-10ba9" id="formP-15708bf7a28-10ba9" action="https://app.aipo.com/portal/js_peid/P-15708bf7a28-10ba9?template=MsgboardCategoryFormJSONScreen" method="post" onsubmit="aimluck.io.selectAllOptions(this.member_to);aimluck.io.submit(this,'indicator-dlg-','P-15708bf7a28-10ba9',aipo.msgboard.onReceiveMessage);return false;">
+                    <input type="hidden" name="_name" value="msgboardCategoryForm">
+                    <input type="hidden" name="secid" value="271c862cdceccec98a81029cc25176a2">
+                    <input id="is_member" name="is_member" type="hidden" value="FALSE">
+                    <input type="hidden" name="mode" value="update">
+                    <table class="listTable wide">
+                        <tbody>
+                            <tr>
+                                <td class="caption"><span class="required">カテゴリ名</span>
+                                </td>
+                                <td>
+                                    <input class="text w100" type="text" name="category_name" id="category_name" value="社員・スタッフ" maxlength="50" style="ime-mode:active">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption">メモ</td>
+                                <td>
+                                    <textarea class="text wide" name="note" rows="10" cols="40"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="caption"><span class="required">トピックの<br>閲覧／返信</span>
+                                </td>
+                                <td>
+                                    <div class="spaceBottom">
+                                        <input name="access_flag" type="radio" value="0" id="P-15708bf7a28-10ba9access_flag_0_id" onclick="aipo.msgboard.hideMember(form)">
+                                        <label for="P-15708bf7a28-10ba9access_flag_0_id"> 全てのユーザーが閲覧／返信可。</label>
+                                        <br>
+                                        <input name="access_flag" type="radio" value="1" id="P-15708bf7a28-10ba9access_flag_1_id" onclick="aipo.msgboard.showMember(this)">
+                                        <label for="P-15708bf7a28-10ba9access_flag_1_id"> 全てのユーザーが閲覧可。所属メンバーのみ返信可</label>
+                                        <br>
+                                        <input name="access_flag" type="radio" value="2" id="P-15708bf7a28-10ba9access_flag_2_id" onclick="aipo.msgboard.showMember(form)" checked="checked">
+                                        <label for="P-15708bf7a28-10ba9access_flag_2_id"> 所属メンバーのみ閲覧／返信可。</label>
+                                        <br>
+                                        <input name="access_flag" type="radio" value="3" id="P-15708bf7a28-10ba9access_flag_3_id" onclick="aipo.msgboard.hideMember(form)">
+                                        <label for="P-15708bf7a28-10ba9access_flag_3_id"> 自分のみ閲覧／返信可。</label>
+                                    </div>
+                                    <div id="Block-GroupMember-Show">
+                                        <div class="spaceTop">
+                                            <h3>所属メンバーの選択</h3>
+                                            <div class="spaceLeft small">左側に所属メンバーを追加してください。</div>
+                                            <div id="membernormalselect" widgetid="membernormalselect">
+                                                <table class="none" style="table-layout: fixed;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div id="memberPopupDiv">
+                                                                    <div class="outer">
+                                                                        <div class="popup">
+                                                                            <div class="clearfix">
+                                                                                <div class="memberlistToTop">所属メンバー一覧</div>
+                                                                                <div class="memberlistFromTop">
+                                                                                    <select size="1" style="width:100%" name="tmp_group" id="tmp_group" dojoattachevent="onchange:changeGroup">
+                                                                                        <option value="LoginUser">すべてのグループ</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="clearfix mb5">
+                                                                                <div class="memberlistToBody">
+                                                                                    <select size="5" multiple="multiple" style="width:100%" name="member_to" id="member_to">
+                                                                                        <option value="0000180388">#社員 太郎</option>
+                                                                                        <option value="0000180638">@スタッフ 次郎</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="memberlistFromBody">
+                                                                                    <select size="5" multiple="multiple" style="width:100%" name="tmp_member_from" id="tmp_member_from">
+                                                                                        <option value="0000180388">#社員 太郎</option>
+                                                                                        <option value="0000180638">@スタッフ 次郎</option>
+                                                                                        <option value="0000180639">%登録 アルバイト</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="clearfix">
+                                                                                <div class="memberlistToBottom">
+                                                                                    <div class="alignright">
+                                                                                        <input id="button_member_remove" name="button_member_remove" type="button" class="button" value="削除" dojoattachevent="onclick:onMemberRemoveClick">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="memberlistFromBottom">
+                                                                                    <div style="display: none;" id="membernormalselect-memberlist-indicator" class="indicator alignleft">読み込み中</div>
+                                                                                    <div class="alignright">
+                                                                                        <input id="button_member_add" name="button_member_add" type="button" class="button" value="＜ 追加" dojoattachevent="onclick:onMemberAddClick">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <select size="5" multiple="multiple" style="display:none;" name="init_memberlist" id="init_memberlist">
+                                                <option value="0000180388">#社員 太郎</option>
+                                                <option value="0000180638">@スタッフ 次郎</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="center auiPopupButtons">
+                        <input name="eventSubmit_doMsgboard_category_update" class="auiButtonAction" type="submit" value="更新する" onclick="aimluck.io.setHiddenValue(this);">
+                        <input name="ajaxbuttonCancel" class="button" type="button" value="キャンセルする" onclick="aipo.common.hideDialog();">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <span dojoattachpoint="tabEnd" dojoonfocus="trapTabs" dojoonblur="clearTrap" tabindex="0"></span><span dojoattachpoint="tabEndOuter" dojoonfocus="trapTabs" dojoonblur="clearTrap" tabindex="0"></span>
+</div>
