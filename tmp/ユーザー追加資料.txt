@@ -1,13 +1,13 @@
-yactionz
+ã€actionã€‘
 https://app.aipo.com/portal/js_peid/121?template=SaaSAccountUserFormJSONScreen
 
-yonsubmitz
+ã€onsubmitã€‘
 aimluck.io.createSelectFromFileList(this, '121');
 aimluck.io.selectAllOptions(this.group_to);
 aimluck.io.submit(this,'indicator-dlg-','121', aipo.account_user.onReceiveMessage);
 return false;
 
-yhtmlz
+ã€htmlã€‘
 <div id="modalDialog" class="modalDialog dijitContentPane" dojoattachpoint="wrapper" widgetid="modalDialog" title="" style="display: block; opacity: 1; top: 0px;">
     <span dojoattachpoint="tabStartOuter" dojoonfocus="trapTabs" dojoonblur="clearTrap" tabindex="0"></span>
     <span dojoattachpoint="tabStart" dojoonfocus="trapTabs" dojoonblur="clearTrap" tabindex="0"></span>
@@ -17,14 +17,14 @@ return false;
             <div class="auiPopupHead clearfix">
                 <div class="auiPopupTool">
                     <div>
-                        <a href="javascript:void(0)" class="auiButtonIcon" title="•Â‚¶‚é" onclick="aipo.common.hideDialog();">
+                        <a href="javascript:void(0)" class="auiButtonIcon" title="é–‰ã˜ã‚‹" onclick="aipo.common.hideDialog();">
                             <span>
                                 <i class="icon-remove"></i>
                             </span>
                         </a>
                     </div>
                 </div>
-                <div class="auiPopupTitle">ƒ†[ƒU[’Ç‰Á</div>
+                <div class="auiPopupTitle">ãƒ¦ãƒ¼ã‚¶ãƒ¼è¿½åŠ </div>
             </div>
             <div class="roundBlockContent">
                 <div id="messageDiv"></div>
@@ -34,19 +34,19 @@ return false;
                             <ul id="startguideSelectButton">
                                 <li id="account_group-button121">
                                     <a class="first" style="width:10em;" href="javascript:void(0);" onclick="aipo.common.showDialog('https://app.aipo.com/portal/js_peid/121?template=StartGuideFormScreen&amp;entityid=new&amp;mediatype=system&amp;current_tab=account_group');">
-                                        <span>ƒ[ƒ‹‚ÅˆêŠ‡µ‘Ò</span>
+                                        <span>ãƒ¡ãƒ¼ãƒ«ã§ä¸€æ‹¬æ‹›å¾…</span>
                                     </a>
                                 </li>
                                 <li id="account_user-button121" class="active">
                                     <a class="last" style="width:10em;" href="javascript:void(0);">
-                                        <span>1ƒ†[ƒU[‚¸‚Â’Ç‰Á</span>
+                                        <span>1ãƒ¦ãƒ¼ã‚¶ãƒ¼ãšã¤è¿½åŠ </span>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="indicator" id="indicator-dlg-121" style="display:none;">ƒf[ƒ^‚ğ‘—M‚µ‚Ä‚¢‚Ü‚·...</div>
+                <div class="indicator" id="indicator-dlg-121" style="display:none;">ãƒ‡ãƒ¼ã‚¿ã‚’é€ä¿¡ã—ã¦ã„ã¾ã™...</div>
                 <form name="form121" id="form121" action="https://app.aipo.com/portal/js_peid/121?template=SaaSAccountUserFormJSONScreen" method="post" onsubmit=" aimluck.io.createSelectFromFileList(this, '121');  aimluck.io.selectAllOptions(this.group_to);aimluck.io.submit(this,'indicator-dlg-','121', aipo.account_user.onReceiveMessage);return false;">
                     <input type="hidden" name="_name" value="accountuserForm">
                     <input type="hidden" name="secid" value="6aadf31642e7a26c00c70116d35afb0d">
@@ -57,29 +57,29 @@ return false;
                     <table class="listTable wide">
                         <tbody>
                             <tr>
-                                <td class="caption"><span class="required">ƒ[ƒ‹ƒAƒhƒŒƒX</span>
+                                <td class="caption"><span class="required">ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹</span>
                                 </td>
                                 <td>
                                     <input class="text" type="text" name="email" id="email" value="" maxlength="50" style="width:70%;ime-mode:disabled">
-                                    <span class="caution">i”¼Šp‰p”šj</span>
+                                    <span class="caution">ï¼ˆåŠè§’è‹±æ•°å­—ï¼‰</span>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="caption"><span class="required">ƒpƒXƒ[ƒh</span>
+                                <td class="caption"><span class="required">ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰</span>
                                 </td>
                                 <td>
                                     <input class="text" type="password" name="password" id="password" value="" maxlength="" style="width:50%;ime-mode:disabled">
                                 </td>
                             </tr>
                             <tr>
-                                <td class="caption"><span class="required">ƒpƒXƒ[ƒh<br>iŠm”F—pj</span>
+                                <td class="caption"><span class="required">ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰<br>ï¼ˆç¢ºèªç”¨ï¼‰</span>
                                 </td>
                                 <td>
                                     <input class="text" type="password" name="password2" id="password2" value="" maxlength="" style="width:50%;ime-mode:disabled">
                                 </td>
                             </tr>
                             <tr>
-                                <td class="caption"><span class="required">–¼‘O</span>
+                                <td class="caption"><span class="required">åå‰</span>
                                 </td>
                                 <td>
                                     <input class="text" type="text" name="lastname" id="lastname" value="" maxlength="20" style="width:30%;ime-mode:active">
@@ -87,7 +87,7 @@ return false;
                                 </td>
                             </tr>
                             <tr>
-                                <td class="caption"><span class="required">–¼‘OiƒtƒŠƒKƒij</span>
+                                <td class="caption"><span class="required">åå‰ï¼ˆãƒ•ãƒªã‚¬ãƒŠï¼‰</span>
                                 </td>
                                 <td>
                                     <input class="text" type="text" name="last_name_kana" id="last_name_kana" value="" maxlength="20" style="width:30%;ime-mode:active">
@@ -95,39 +95,39 @@ return false;
                                 </td>
                             </tr>
                             <tr>
-                                <td class="caption">“d˜b”Ô†iŠOüj</td>
+                                <td class="caption">é›»è©±ç•ªå·ï¼ˆå¤–ç·šï¼‰</td>
                                 <td>
                                     <input class="text" type="text" name="out_telephone1" id="out_telephone1" value="" maxlength="5" style="width:20%;ime-mode:disabled"> -&nbsp;
                                     <input class="text" type="text" name="out_telephone2" id="out_telephone2" value="" maxlength="4" style="width:20%;ime-mode:disabled"> -&nbsp;
                                     <input class="text" type="text" name="out_telephone3" id="out_telephone3" value="" maxlength="4" style="width:20%;ime-mode:disabled">
-                                    <span class="caution">i”¼Šp”šj</span>
+                                    <span class="caution">ï¼ˆåŠè§’æ•°å­—ï¼‰</span>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="caption">“d˜b”Ô†i“àüj</td>
+                                <td class="caption">é›»è©±ç•ªå·ï¼ˆå†…ç·šï¼‰</td>
                                 <td>
                                     <input class="text" type="text" name="in_telephone" id="in_telephone" value="" maxlength="13" style="width:30%;ime-mode:disabled">
-                                    <span class="caution">iƒnƒCƒtƒ“i-j‚Ü‚½‚Í”¼Šp”šj</span>
+                                    <span class="caution">ï¼ˆãƒã‚¤ãƒ•ãƒ³ï¼ˆ-ï¼‰ã¾ãŸã¯åŠè§’æ•°å­—ï¼‰</span>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="caption">“d˜b”Ô†iŒg‘Ñj</td>
+                                <td class="caption">é›»è©±ç•ªå·ï¼ˆæºå¸¯ï¼‰</td>
                                 <td>
                                     <input class="text" type="text" name="cellular_phone1" id="cellular_phone1" value="" maxlength="5" style="width:20%;ime-mode:disabled"> -&nbsp;
                                     <input class="text" type="text" name="cellular_phone2" id="cellular_phone2" value="" maxlength="4" style="width:20%;ime-mode:disabled"> -&nbsp;
                                     <input class="text" type="text" name="cellular_phone3" id="cellular_phone3" value="" maxlength="4" style="width:20%;ime-mode:disabled">
-                                    <span class="caution">i”¼Šp”šj</span>
+                                    <span class="caution">ï¼ˆåŠè§’æ•°å­—ï¼‰</span>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="caption">Œg‘Ñƒ[ƒ‹ƒAƒhƒŒƒX</td>
+                                <td class="caption">æºå¸¯ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹</td>
                                 <td>
                                     <input class="text" type="text" name="cellular_mail" id="cellular_mail" value="" maxlength="50" style="width:70%;ime-mode:disabled">
-                                    <span class="caution">i”¼Šp‰p”šj</span>
+                                    <span class="caution">ï¼ˆåŠè§’è‹±æ•°å­—ï¼‰</span>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="caption">ŠçÊ^</td>
+                                <td class="caption">é¡”å†™çœŸ</td>
                                 <td>
                                     <iframe name="if_fileupload_121" id="if_fileupload_121" allowtransparency="true" class="auiInputFileFrame" src="https://app.aipo.com/portal/js_peid/121?template=FileuploadFormScreen&amp;mode=miniform" frameborder="0" scrolling="no">
                                     </iframe>
@@ -137,9 +137,9 @@ return false;
                                 </td>
                             </tr>
                             <tr>
-                                <td class="caption">•”</td>
+                                <td class="caption">éƒ¨ç½²</td>
                                 <td>
-                                    <div class="spaceTop spaceLeft small">¶‘¤‚ÉŠ‘®•”‚ğ’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢B</div>
+                                    <div class="spaceTop spaceLeft small">å·¦å´ã«æ‰€å±éƒ¨ç½²ã‚’è¿½åŠ ã—ã¦ãã ã•ã„ã€‚</div>
                                     <div id="groupnormalselect" widgetid="groupnormalselect">
                                         <table class="none">
                                             <tbody>
@@ -149,8 +149,8 @@ return false;
                                                             <div class="outer">
                                                                 <div class="popup" style="width:335px">
                                                                     <div class="clearfix">
-                                                                        <div class="memberlistToTop">Š‘®•”</div>
-                                                                        <div class="memberlistFromTop">•”ˆê——</div>
+                                                                        <div class="memberlistToTop">æ‰€å±éƒ¨ç½²</div>
+                                                                        <div class="memberlistFromTop">éƒ¨ç½²ä¸€è¦§</div>
                                                                     </div>
                                                                     <div class="clearfix mb5">
                                                                         <div class="memberlistToBody">
@@ -163,12 +163,12 @@ return false;
                                                                     <div class="clearfix">
                                                                         <div class="memberlistToBottom">
                                                                             <div class="alignright">
-                                                                                <input id="button_group_remove" name="button_group_remove" type="button" class="button" value="íœ" dojoattachevent="onclick:onMemberRemoveClick">
+                                                                                <input id="button_group_remove" name="button_group_remove" type="button" class="button" value="å‰Šé™¤" dojoattachevent="onclick:onMemberRemoveClick">
                                                                             </div>
                                                                         </div>
                                                                         <div class="memberlistFromBottom">
                                                                             <div class="alignright">
-                                                                                <input id="button_group_add" name="button_group_add" type="button" class="button" value="ƒ ’Ç‰Á" dojoattachevent="onclick:onMemberAddClick">
+                                                                                <input id="button_group_add" name="button_group_add" type="button" class="button" value="ï¼œ è¿½åŠ " dojoattachevent="onclick:onMemberAddClick">
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -184,30 +184,30 @@ return false;
                                 </td>
                             </tr>
                             <tr>
-                                <td class="caption">–ğE</td>
+                                <td class="caption">å½¹è·</td>
                                 <td>
                                     <div id="positionInputField" style="display:none">
                                         <input class="text" type="text" name="position_name" id="position_name" value="" maxlength="50" style="width:90%;ime-mode:active">
                                     </div>
                                     <div id="positionSelectField">
                                         <select name="position_id" class="w100 mb5">
-                                            <option value="">iw’è‚µ‚È‚¢j</option>
+                                            <option value="">ï¼ˆæŒ‡å®šã—ãªã„ï¼‰</option>
                                         </select>
                                     </div>
-                                    <input name="position_input_button" type="button" class="button" value=" V‚µ‚­“ü—Í‚·‚é " onclick="aipo.account_user.formSwitchPositionInput(this)">
+                                    <input name="position_input_button" type="button" class="button" value=" æ–°ã—ãå…¥åŠ›ã™ã‚‹ " onclick="aipo.account_user.formSwitchPositionInput(this)">
                                 </td>
                             </tr>
                             <tr>
-                                <td class="caption">ĞˆõƒR[ƒh</td>
+                                <td class="caption">ç¤¾å“¡ã‚³ãƒ¼ãƒ‰</td>
                                 <td>
                                     <input class="text" type="text" name="code" id="code" value="" maxlength="100" style="width:70%;ime-mode:disabled">
                                 </td>
                             </tr>
                             <tr>
-                                <td class="caption">ŠÇ—ÒŒ ŒÀ</td>
+                                <td class="caption">ç®¡ç†è€…æ¨©é™</td>
                                 <td>
                                     <input name="is_admin_checkbox" type="checkbox" value="" id="121is_admin_id" onchange="aipo.account_user.formAdminToggle(this);">&nbsp;
-                                    <label for="121is_admin_id">ŠÇ—Ò‚É‚·‚é</label>
+                                    <label for="121is_admin_id">ç®¡ç†è€…ã«ã™ã‚‹</label>
                                     <input name="is_admin" type="hidden" id="is_admin" value="">
                                 </td>
                             </tr>
@@ -216,10 +216,10 @@ return false;
                     <div class="center auiPopupButtons">
                         <p style="padding:5px;">
                             <input name="is_mail" type="checkbox" value="true" id="121is_mail" checked="checked">&nbsp;
-                            <label for="121is_mail">ƒAƒJƒEƒ“ƒgî•ñ‚ğƒ†[ƒU[‚É‘—M‚·‚é</label>
+                            <label for="121is_mail">ã‚¢ã‚«ã‚¦ãƒ³ãƒˆæƒ…å ±ã‚’ãƒ¦ãƒ¼ã‚¶ãƒ¼ã«é€ä¿¡ã™ã‚‹</label>
                         </p>
-                        <input name="eventSubmit_doAccount_insert" class="auiButtonAction" type="submit" value="’Ç‰Á‚·‚é" onclick="aimluck.io.setHiddenValue(this);">
-                        <input name="ajaxbuttonClose" class="button" type="button" value="•Â‚¶‚é" onclick="aipo.common.hideDialog();">
+                        <input name="eventSubmit_doAccount_insert" class="auiButtonAction" type="submit" value="è¿½åŠ ã™ã‚‹" onclick="aimluck.io.setHiddenValue(this);">
+                        <input name="ajaxbuttonClose" class="button" type="button" value="é–‰ã˜ã‚‹" onclick="aipo.common.hideDialog();">
                     </div>
                 </form>
             </div>
