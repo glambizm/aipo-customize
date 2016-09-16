@@ -942,7 +942,6 @@ public class AccountUserFormData extends ALAbstractFormData {
           }
         }
 
-// <#01> --- S
         // アクセス権限
         ALAccessControlFactoryService aclservice =
           (ALAccessControlFactoryService) ((TurbineServices) TurbineServices
@@ -951,7 +950,6 @@ public class AccountUserFormData extends ALAbstractFormData {
         ALAccessControlHandler aclhandler =
           aclservice.getAccessControlHandler();
         aclhandler.insertDefaultRole(Integer.parseInt(user.getUserId()));
-// <#01> --- E
 
         // 勤務形態
         EipTExtTimecardSystem system =
