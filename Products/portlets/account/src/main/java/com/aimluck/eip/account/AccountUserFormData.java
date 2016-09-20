@@ -39,6 +39,8 @@ import org.apache.turbine.services.TurbineServices;
 import org.apache.turbine.util.RunData;
 import org.apache.velocity.context.Context;
 
+import com.aimluck.eip.cayenne.om.portlet.EipTMsgboardCategory;                 // <#01>
+import com.aimluck.eip.cayenne.om.portlet.EipTMsgboardCategoryMap;              // <#01>
 import com.aimluck.commons.field.ALNumberField;
 import com.aimluck.commons.field.ALStringField;
 import com.aimluck.commons.utils.ALStringUtil;
@@ -72,6 +74,7 @@ import com.aimluck.eip.services.storage.ALStorageService;
 import com.aimluck.eip.user.beans.UserGroupLiteBean;
 import com.aimluck.eip.util.ALEipUtils;
 import com.aimluck.eip.util.ALLocalizationUtils;
+import com.aimluck.eip.msgboard.util.MsgboardUtils;                             // <#01>
 
 /**
  * ユーザーアカウントのフォームデータを管理するクラスです。 <BR>
@@ -962,6 +965,41 @@ public class AccountUserFormData extends ALAbstractFormData {
           rd.setCreateDate(now);
           rd.setUpdateDate(now);
         }
+
+// <#01> --- S
+        // 掲示板カテゴリ
+        Integer employeeType = user.getEmployeeType();
+
+        StringBuilder sql =
+          new StringBuilder().append("SELECT * FROM eip_t_msgboard_category ");
+
+        if (employeeType == TurbineUser.EMPLOYEE_TYPE_EMPLOYEE) {
+          // 社員
+          sql.append(" WHERE SUBSTR(category_name,1,1)=").append(TurbineUser.EMPLOYEE_MSGBOARD_CATEGORY_MARK_EMPLOYEE);
+        } else {
+          // 社員以外
+          sql.append(" WHERE SUBSTR(category_name,1,1)<>").append(TurbineUser.EMPLOYEE_MSGBOARD_CATEGORY_MARK_EMPLOYEE);
+        }
+
+        SQLTemplate<EipTMsgboardCategory> sqltemp =
+          Database.sql(EipTMsgboardCategory.class, String.valueOf(sql));
+
+        List<DataRow> fetchList = sqltemp.fetchListAsDataRow();
+        List<EipTMsgboardCategory> list = new ArrayList<EipTMsgboardCategory>();
+        for (DataRow row : fetchList) {
+          EipTMsgboardCategory object = Database.objectFromRowData(row, EipTMsgboardCategory.class);
+          EipTMsgboardCategory eipTMsgboardCategory = Database.get(EipTMsgboardCategory.class, object.getCategoryId());
+          list.add(eipTMsgboardCategory);
+        }
+
+        for (EipTMsgboardCategory category : list) {
+          EipTMsgboardCategoryMap map = Database.create(EipTMsgboardCategoryMap.class);
+          map.setEipTMsgboardCategory(category);
+          int userid = (int) user.getUserId().getValue();
+          map.setUserId(Integer.valueOf(userid));
+          map.setStatus(MsgboardUtils.STAT_VALUE_SHARE);
+        }
+// <#01> --- E
 
         Database.commit();
 

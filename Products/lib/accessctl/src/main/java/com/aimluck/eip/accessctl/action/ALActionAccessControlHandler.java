@@ -37,6 +37,7 @@ import com.aimluck.eip.orm.Database;
 import com.aimluck.eip.orm.query.SQLTemplate;
 import com.aimluck.eip.services.accessctl.ALAccessControlConstants;
 import com.aimluck.eip.services.accessctl.ALAccessControlHandler;
+import com.aimluck.eip.util.ALEipUtils;                                         // <#01>
 
 public class ALActionAccessControlHandler extends ALAccessControlHandler {
 
@@ -243,7 +244,6 @@ public class ALActionAccessControlHandler extends ALAccessControlHandler {
     return list;
   }
 
-// <#01> --- S
   /**
    * ACLの登録（ここではコミット処理はしない）
    * 
@@ -253,9 +253,32 @@ public class ALActionAccessControlHandler extends ALAccessControlHandler {
     TurbineUser tuser = Database.get(TurbineUser.class, Integer.valueOf(uid));
 
     // デフォルトロールはcreat_dateがない
+// <#01> --- S
+//  StringBuilder sql =
+//  new StringBuilder().append("SELECT * FROM eip_t_acl_role ").append(
+//      " WHERE create_date IS NULL");
+    Integer employeeType = tuser.getEmployeeType();
+    boolean isAdmin = ALEipUtils.isAdmin(tuser.getUserId());
+
     StringBuilder sql =
-      new StringBuilder().append("SELECT * FROM eip_t_acl_role ").append(
-        " WHERE create_date IS NULL");
+    new StringBuilder().append("SELECT * FROM eip_t_acl_role ");
+
+    if (isAdmin == true) {
+      // 管理者
+      sql.append(" WHERE SUBSTR(role_name,1,1)<>")
+         .append(TurbineUser.EMPLOYEE_ROLL_MARK_OTHER)
+    } else if (employeeType == TurbineUser.EMPLOYEE_TYPE_EMPLOYEE) {
+      // 社員
+      sql.append(" WHERE SUBSTR(role_name,1,1)<>")
+         .append(TurbineUser.EMPLOYEE_ROLL_MARK_ADMIN);
+         .append(" AND SUBSTR(role_name,1,1)<>")
+         .append(TurbineUser.EMPLOYEE_ROLL_MARK_OTHER)
+    } else {
+      // 社員以外
+      sql.append(" WHERE SUBSTR(role_name,1,1)=").append(TurbineUser.EMPLOYEE_ROLL_MARK_OTHER);
+    }
+// <#01> --- E
+
     SQLTemplate<EipTAclRole> sqltemp =
       Database.sql(EipTAclRole.class, String.valueOf(sql));
 
@@ -280,6 +303,5 @@ public class ALActionAccessControlHandler extends ALAccessControlHandler {
       map.setTurbineUser(tuser);
     }
   }
-// <#01> --- E
 
 }
