@@ -266,16 +266,16 @@ public class ALActionAccessControlHandler extends ALAccessControlHandler {
     if (isAdmin == true) {
       // 管理者
       sql.append(" WHERE SUBSTR(role_name,1,1)<>")
-         .append(TurbineUser.EMPLOYEE_ROLL_MARK_OTHER)
+         .append("\'" + TurbineUser.EMPLOYEE_ROLL_MARK_OTHER + "\'");
     } else if (employeeType == TurbineUser.EMPLOYEE_TYPE_EMPLOYEE) {
       // 社員
       sql.append(" WHERE SUBSTR(role_name,1,1)<>")
-         .append(TurbineUser.EMPLOYEE_ROLL_MARK_ADMIN);
+         .append("\'" + TurbineUser.EMPLOYEE_ROLL_MARK_ADMIN + "\'")
          .append(" AND SUBSTR(role_name,1,1)<>")
-         .append(TurbineUser.EMPLOYEE_ROLL_MARK_OTHER)
+         .append("\'" + TurbineUser.EMPLOYEE_ROLL_MARK_OTHER + "\'");
     } else {
       // 社員以外
-      sql.append(" WHERE SUBSTR(role_name,1,1)=").append(TurbineUser.EMPLOYEE_ROLL_MARK_OTHER);
+      sql.append(" WHERE SUBSTR(role_name,1,1)=").append("\'" + TurbineUser.EMPLOYEE_ROLL_MARK_OTHER + "\'");
     }
 // <#01> --- E
 

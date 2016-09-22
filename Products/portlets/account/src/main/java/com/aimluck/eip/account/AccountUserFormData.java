@@ -29,6 +29,7 @@ import java.util.regex.Pattern;
 
 import javax.imageio.ImageIO;
 
+import org.apache.cayenne.DataRow;                                              // <#01>
 import org.apache.cayenne.exp.Expression;
 import org.apache.cayenne.exp.ExpressionFactory;
 import org.apache.jetspeed.services.JetspeedSecurity;
@@ -62,6 +63,7 @@ import com.aimluck.eip.fileupload.util.FileuploadUtils;
 import com.aimluck.eip.fileupload.util.FileuploadUtils.ShrinkImageSet;
 import com.aimluck.eip.modules.actions.common.ALAction;
 import com.aimluck.eip.orm.Database;
+import com.aimluck.eip.orm.query.SQLTemplate;                                   // <#01>
 import com.aimluck.eip.orm.query.SelectQuery;
 import com.aimluck.eip.services.accessctl.ALAccessControlFactoryService;
 import com.aimluck.eip.services.accessctl.ALAccessControlHandler;
@@ -968,17 +970,18 @@ public class AccountUserFormData extends ALAbstractFormData {
 
 // <#01> --- S
         // 掲示板カテゴリ
-        Integer employeeType = user.getEmployeeType();
+        TurbineUser tuser = Database.get(TurbineUser.class, Integer.parseInt(user.getUserId()));
+        Integer employeeType = tuser.getEmployeeType();
 
         StringBuilder sql =
           new StringBuilder().append("SELECT * FROM eip_t_msgboard_category ");
 
         if (employeeType == TurbineUser.EMPLOYEE_TYPE_EMPLOYEE) {
           // 社員
-          sql.append(" WHERE SUBSTR(category_name,1,1)=").append(TurbineUser.EMPLOYEE_MSGBOARD_CATEGORY_MARK_EMPLOYEE);
+          sql.append(" WHERE SUBSTR(category_name,1,1)=").append("\'" + TurbineUser.EMPLOYEE_MSGBOARD_CATEGORY_MARK_EMPLOYEE + "\'");
         } else {
           // 社員以外
-          sql.append(" WHERE SUBSTR(category_name,1,1)<>").append(TurbineUser.EMPLOYEE_MSGBOARD_CATEGORY_MARK_EMPLOYEE);
+          sql.append(" WHERE SUBSTR(category_name,1,1)<>").append("\'" + TurbineUser.EMPLOYEE_MSGBOARD_CATEGORY_MARK_EMPLOYEE + "\'");
         }
 
         SQLTemplate<EipTMsgboardCategory> sqltemp =
@@ -995,7 +998,7 @@ public class AccountUserFormData extends ALAbstractFormData {
         for (EipTMsgboardCategory category : list) {
           EipTMsgboardCategoryMap map = Database.create(EipTMsgboardCategoryMap.class);
           map.setEipTMsgboardCategory(category);
-          int userid = (int) user.getUserId().getValue();
+          int userid = Integer.parseInt(user.getUserId());
           map.setUserId(Integer.valueOf(userid));
           map.setStatus(MsgboardUtils.STAT_VALUE_SHARE);
         }
