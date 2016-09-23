@@ -973,34 +973,31 @@ public class AccountUserFormData extends ALAbstractFormData {
         TurbineUser tuser = Database.get(TurbineUser.class, Integer.parseInt(user.getUserId()));
         Integer employeeType = tuser.getEmployeeType();
 
-        StringBuilder sql =
-          new StringBuilder().append("SELECT * FROM eip_t_msgboard_category ");
-
         if (employeeType == TurbineUser.EMPLOYEE_TYPE_EMPLOYEE) {
           // 社員
-          sql.append(" WHERE SUBSTR(category_name,1,1)=").append("\'" + TurbineUser.EMPLOYEE_MSGBOARD_CATEGORY_MARK_EMPLOYEE + "\'");
-        } else {
-          // 社員以外
-          sql.append(" WHERE SUBSTR(category_name,1,1)<>").append("\'" + TurbineUser.EMPLOYEE_MSGBOARD_CATEGORY_MARK_EMPLOYEE + "\'");
-        }
+          StringBuilder sql =
+            new StringBuilder().append("SELECT * FROM eip_t_msgboard_category ");
+                               .append(" WHERE SUBSTR(category_name,1,1)=")
+                               .append("\'" + TurbineUser.EMPLOYEE_MSGBOARD_CATEGORY_MARK_EMPLOYEE + "\'");
 
-        SQLTemplate<EipTMsgboardCategory> sqltemp =
-          Database.sql(EipTMsgboardCategory.class, String.valueOf(sql));
+          SQLTemplate<EipTMsgboardCategory> sqltemp =
+            Database.sql(EipTMsgboardCategory.class, String.valueOf(sql));
 
-        List<DataRow> fetchList = sqltemp.fetchListAsDataRow();
-        List<EipTMsgboardCategory> list = new ArrayList<EipTMsgboardCategory>();
-        for (DataRow row : fetchList) {
-          EipTMsgboardCategory object = Database.objectFromRowData(row, EipTMsgboardCategory.class);
-          EipTMsgboardCategory eipTMsgboardCategory = Database.get(EipTMsgboardCategory.class, object.getCategoryId());
-          list.add(eipTMsgboardCategory);
-        }
+          List<DataRow> fetchList = sqltemp.fetchListAsDataRow();
+          List<EipTMsgboardCategory> list = new ArrayList<EipTMsgboardCategory>();
+          for (DataRow row : fetchList) {
+            EipTMsgboardCategory object = Database.objectFromRowData(row, EipTMsgboardCategory.class);
+            EipTMsgboardCategory eipTMsgboardCategory = Database.get(EipTMsgboardCategory.class, object.getCategoryId());
+            list.add(eipTMsgboardCategory);
+          }
 
-        for (EipTMsgboardCategory category : list) {
-          EipTMsgboardCategoryMap map = Database.create(EipTMsgboardCategoryMap.class);
-          map.setEipTMsgboardCategory(category);
-          int userid = Integer.parseInt(user.getUserId());
-          map.setUserId(Integer.valueOf(userid));
-          map.setStatus(MsgboardUtils.STAT_VALUE_SHARE);
+          for (EipTMsgboardCategory category : list) {
+            EipTMsgboardCategoryMap map = Database.create(EipTMsgboardCategoryMap.class);
+            map.setEipTMsgboardCategory(category);
+            int userid = Integer.parseInt(user.getUserId());
+            map.setUserId(Integer.valueOf(userid));
+            map.setStatus(MsgboardUtils.STAT_VALUE_SHARE);
+          }
         }
 // <#01> --- E
 
