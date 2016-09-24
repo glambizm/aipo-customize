@@ -976,7 +976,7 @@ public class AccountUserFormData extends ALAbstractFormData {
         if (employeeType == TurbineUser.EMPLOYEE_TYPE_EMPLOYEE) {
           // 社員
           StringBuilder sql =
-            new StringBuilder().append("SELECT * FROM eip_t_msgboard_category ");
+            new StringBuilder().append("SELECT * FROM eip_t_msgboard_category ")
                                .append(" WHERE SUBSTR(category_name,1,1)=")
                                .append("\'" + TurbineUser.EMPLOYEE_MSGBOARD_CATEGORY_MARK_EMPLOYEE + "\'");
 
