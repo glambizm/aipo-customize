@@ -766,7 +766,6 @@ public class FileIOAccountCsvFormData extends ALAbstractFormData {
           for (EipTMsgboardCategory category : list) {
             EipTMsgboardCategoryMap map = Database.create(EipTMsgboardCategoryMap.class);
             map.setEipTMsgboardCategory(category);
-            int userid = Integer.parseInt(user.getUserId());
             map.setUserId(Integer.valueOf(userid));
             map.setStatus(MsgboardUtils.STAT_VALUE_SHARE);
           }
